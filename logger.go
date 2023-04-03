@@ -1,4 +1,4 @@
-package main
+package logger
 
 import (
 	"github.com/fretebras/go-logger/pkg/config"
@@ -21,9 +21,6 @@ var c *config.Config
 
 func init() {
 	c = config.NewConfig()
-}
-
-func main() {
 	l.app = c.App
 	l.env = c.Environment
 	l.version = c.Version
