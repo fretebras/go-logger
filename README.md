@@ -22,6 +22,6 @@ This is a package to facilitate the creation and standardization of structured l
 ```
 
 
-## Getting Started\
+## Getting Started
 
 WIP

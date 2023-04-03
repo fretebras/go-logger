@@ -3,3 +3,5 @@ go.sum
 vendor
 .vscode
 __debug_bin
+.env
+go-logger
