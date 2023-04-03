@@ -16,14 +16,16 @@ type Logger struct {
 	service string
 }
 
-var l Logger
 var c *config.Config
 
-func init() {
+func New() *Logger {
 	c = config.NewConfig()
-	l.app = c.App
-	l.env = c.Environment
-	l.version = c.Version
+
+	l := &Logger{
+		env:     c.Environment,
+		app:     c.App,
+		version: c.Version,
+	}
 
 	zerolog.CallerFieldName = callerFieldName
 	zerolog.TimeFieldFormat = zerolog.TimeFormatUnixMicro
@@ -33,6 +35,7 @@ func init() {
 		Str("version", l.version).
 		Str("environment", l.env).
 		Logger()
+	return l
 }
 
 func (l *Logger) Debug(Message string, Context ...string) {
