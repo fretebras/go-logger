@@ -12,24 +12,24 @@ type Config struct {
 }
 
 func NewConfig() *Config {
-	err := godotenv.Load()
+	err := godotenv.Load(".config.env")
 	if err != nil {
-		panic("Error loading .env file")
+		panic("Error loading .config.env file")
 	}
 
 	app, ok := os.LookupEnv("APP")
 	if !ok {
-		panic("Unable Read Variable APP from .env File")
+		panic("Unable Read Variable APP from .config.env File")
 	}
 
 	environment, ok := os.LookupEnv("ENVIRONMENT")
 	if !ok {
-		panic("Unable Read Variable ENVIRONMENT from .env File")
+		panic("Unable Read Variable ENVIRONMENT from .config.env File")
 	}
 
 	version, ok := os.LookupEnv("VERSION")
 	if !ok {
-		panic("Unable Read Variable VERSION from .env File")
+		panic("Unable Read Variable VERSION from .config.env File")
 	}
 
 	return &Config{
