@@ -34,7 +34,7 @@ func TestLogger_Warning(t *testing.T) {
 	logger.SetLogService("test-service-warning")
 	var buf bytes.Buffer
 	logger.logger = logger.logger.Output(&buf)
-	logger.Info("warning message", "context-warning")
+	logger.Warning("warning message", "context-warning")
 	assert.Contains(t, buf.String(), "warning message")
 	assert.Contains(t, buf.String(), "test-service-warning")
 	assert.Contains(t, buf.String(), "context-warning")
