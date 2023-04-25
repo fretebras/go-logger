@@ -110,7 +110,7 @@ func main() {
 // Output: {"level":"error","app":"my-application","version":"0.0.1","environment":"local","service":"","context":["Error log"],"trace":"/home/felipeteixeira/Projetos/test/main.go:11","time":1682460148031756,"message":"error"}
 ```
 
-#### Logging Critical Messages
+### Logging Critical Messages
 
 ```go
 package main
