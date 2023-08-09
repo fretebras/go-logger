@@ -5,13 +5,6 @@ This is a package to facilitate the creation and standardization of structured l
 
 
 
-## Installation
-
-```bash
-  go get github.com/fretebras/go-logger
-```
-
-
 ## Screenshots
 ![App Screenshot](doc/output_example.png)
 
@@ -24,12 +17,8 @@ This is a package to facilitate the creation and standardization of structured l
 
 ## Getting Started
 
-### Create a .config.env file
-
-```
-APP=my-application
-ENVIRONMENT=local
-VERSION=0.0.1
+```bash
+  go get github.com/fretebras/go-logger
 ```
 
 ### Simple Logging Example
