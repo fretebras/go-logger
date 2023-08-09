@@ -1,7 +1,6 @@
 package logger
 
 import (
-	"github.com/fretebras/go-logger/pkg/config"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
 )
@@ -16,15 +15,11 @@ type Logger struct {
 	service string
 }
 
-var c *config.Config
-
-func New() *Logger {
-	c = config.NewConfig()
-
+func New(environment, app, version string) *Logger {
 	l := &Logger{
-		env:     c.Environment,
-		app:     c.App,
-		version: c.Version,
+		env:     environment,
+		app:     app,
+		version: version,
 	}
 
 	zerolog.CallerFieldName = callerFieldName
