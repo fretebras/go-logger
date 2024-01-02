@@ -5,7 +5,10 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-const callerFieldName = "trace"
+const (
+	callerFieldName = "trace"
+	environmentProd = "prod"
+)
 
 type Logger struct {
 	env     string
@@ -20,6 +23,11 @@ func New(environment, app, version string) *Logger {
 		env:     environment,
 		app:     app,
 		version: version,
+	}
+
+	zerolog.SetGlobalLevel(zerolog.InfoLevel)
+	if environment != environmentProd {
+		zerolog.SetGlobalLevel(zerolog.DebugLevel)
 	}
 
 	zerolog.CallerFieldName = callerFieldName
